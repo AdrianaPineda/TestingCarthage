@@ -10,4 +10,8 @@
 
 @implementation TestingCarthage
 
+- (int)sumX:(int)x toY:(int)y {
+    return 3;
+}
+
 @end

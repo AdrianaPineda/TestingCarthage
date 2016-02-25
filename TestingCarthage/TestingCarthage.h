@@ -10,4 +10,6 @@
 
 @interface TestingCarthage : NSObject
 
+- (int)sumX:(int)x toY:(int)y;
+
 @end
