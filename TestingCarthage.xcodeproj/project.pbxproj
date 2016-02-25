@@ -1,0 +1,253 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010ED98F1C7FA6E30045DBE1 /* TestingCarthage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; };
+		010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		010ED9891C7FA6E30045DBE1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				010ED98F1C7FA6E30045DBE1 /* TestingCarthage.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		010ED98B1C7FA6E30045DBE1 /* libTestingCarthage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTestingCarthage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingCarthage.h; sourceTree = "<group>"; };
+		010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingCarthage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		010ED9881C7FA6E30045DBE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		010ED9821C7FA6E20045DBE1 = {
+			isa = PBXGroup;
+			children = (
+				010ED98D1C7FA6E30045DBE1 /* TestingCarthage */,
+				010ED98C1C7FA6E30045DBE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		010ED98C1C7FA6E30045DBE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				010ED98B1C7FA6E30045DBE1 /* libTestingCarthage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		010ED98D1C7FA6E30045DBE1 /* TestingCarthage */ = {
+			isa = PBXGroup;
+			children = (
+				010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */,
+				010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */,
+			);
+			path = TestingCarthage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		010ED98A1C7FA6E30045DBE1 /* TestingCarthage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010ED9941C7FA6E30045DBE1 /* Build configuration list for PBXNativeTarget "TestingCarthage" */;
+			buildPhases = (
+				010ED9871C7FA6E30045DBE1 /* Sources */,
+				010ED9881C7FA6E30045DBE1 /* Frameworks */,
+				010ED9891C7FA6E30045DBE1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestingCarthage;
+			productName = TestingCarthage;
+			productReference = 010ED98B1C7FA6E30045DBE1 /* libTestingCarthage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		010ED9831C7FA6E20045DBE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Adriana Pineda";
+				TargetAttributes = {
+					010ED98A1C7FA6E30045DBE1 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 010ED9861C7FA6E20045DBE1 /* Build configuration list for PBXProject "TestingCarthage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 010ED9821C7FA6E20045DBE1;
+			productRefGroup = 010ED98C1C7FA6E30045DBE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				010ED98A1C7FA6E30045DBE1 /* TestingCarthage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		010ED9871C7FA6E30045DBE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		010ED9921C7FA6E30045DBE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		010ED9931C7FA6E30045DBE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		010ED9951C7FA6E30045DBE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		010ED9961C7FA6E30045DBE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		010ED9861C7FA6E20045DBE1 /* Build configuration list for PBXProject "TestingCarthage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010ED9921C7FA6E30045DBE1 /* Debug */,
+				010ED9931C7FA6E30045DBE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010ED9941C7FA6E30045DBE1 /* Build configuration list for PBXNativeTarget "TestingCarthage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010ED9951C7FA6E30045DBE1 /* Debug */,
+				010ED9961C7FA6E30045DBE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 010ED9831C7FA6E20045DBE1 /* Project object */;
+}
