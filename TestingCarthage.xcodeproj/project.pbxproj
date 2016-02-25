@@ -11,8 +11,10 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 010ED9981C7FA7EC0045DBE1 /* Build configuration list for PBXAggregateTarget "Framework" */;
 			buildPhases = (
+				010ED99B1C7FC4310045DBE1 /* Framework */,
 			);
 			dependencies = (
+				010ED99E1C7FC6380045DBE1 /* PBXTargetDependency */,
 			);
 			name = Framework;
 			productName = Framework;
@@ -23,6 +25,16 @@
 		010ED98F1C7FA6E30045DBE1 /* TestingCarthage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; };
 		010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		010ED99D1C7FC6380045DBE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010ED9831C7FA6E20045DBE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010ED98A1C7FA6E30045DBE1;
+			remoteInfo = TestingCarthage;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		010ED9891C7FA6E30045DBE1 /* CopyFiles */ = {
@@ -89,6 +101,7 @@
 				010ED9871C7FA6E30045DBE1 /* Sources */,
 				010ED9881C7FA6E30045DBE1 /* Frameworks */,
 				010ED9891C7FA6E30045DBE1 /* CopyFiles */,
+				010ED99C1C7FC4550045DBE1 /* Prepare framework */,
 			);
 			buildRules = (
 			);
@@ -134,6 +147,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		010ED99B1C7FC4310045DBE1 /* Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Framework;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n\n# Avoid recursively calling this script.\nif [[ $AOT_MASTER_SCRIPT_RUNNING ]]; then\nexit 0\nfi\n\nset -u\nexport AOT_MASTER_SCRIPT_RUNNING=1\n\nAOT_TARGET_NAME=${PROJECT_NAME}\nAOT_EXECUTABLE_PATH=\"lib${AOT_TARGET_NAME}.a\"\nAOT_WRAPPER_NAME=\"${AOT_TARGET_NAME}.framework\"\nAOT_FRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${AOT_TARGET_NAME}.framework\"\n\n# 1 - Extract the platform (iphoneos/iphonesimulator) from the SDK name\necho \"1. Extract the platform\"\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nAOT_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 2 - Extract the version from the SDK\necho \"2. Extract the version from the SDK\"\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nAOT_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 3 - Determine the other platform\necho \"3. Determine the other platform\"\nif [[ \"$AOT_SDK_PLATFORM\" = \"iphoneos\" ]]; then\nAOT_OTHER_PLATFORM=iphonesimulator\nelse\nAOT_OTHER_PLATFORM=iphoneos\nfi\n\n# 4 - Find the build directory\necho \"4. Find the build directory\"\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$AOT_SDK_PLATFORM$ ]]; then\nAOT_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${AOT_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${AOT_OTHER_PLATFORM}${AOT_SDK_VERSION} ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nxcrun lipo -create \"${BUILT_PRODUCTS_DIR}/${AOT_EXECUTABLE_PATH}\" \"${AOT_OTHER_BUILT_PRODUCTS_DIR}/${AOT_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${AOT_WRAPPER_NAME}/Versions/A/${AOT_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${AOT_WRAPPER_NAME}/Versions/A/${AOT_TARGET_NAME}\" \"${AOT_OTHER_BUILT_PRODUCTS_DIR}/${AOT_WRAPPER_NAME}/Versions/A/${AOT_TARGET_NAME}\"\n\n# Copy the framework to the user's desktop\nditto \"${AOT_FRAMEWORK_LOCATION}\" \"${HOME}/Desktop/${AOT_WRAPPER_NAME}\"";
+		};
+		010ED99C1C7FC4550045DBE1 /* Prepare framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		010ED9871C7FA6E30045DBE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +188,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		010ED99E1C7FC6380045DBE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 010ED98A1C7FA6E30045DBE1 /* TestingCarthage */;
+			targetProxy = 010ED99D1C7FC6380045DBE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		010ED9921C7FA6E30045DBE1 /* Debug */ = {
@@ -184,7 +236,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -221,6 +273,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -229,18 +282,24 @@
 		010ED9951C7FA6E30045DBE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		010ED9961C7FA6E30045DBE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Release;
 		};
