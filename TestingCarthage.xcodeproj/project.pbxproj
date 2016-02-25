@@ -6,6 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		010ED9971C7FA7EC0045DBE1 /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 010ED9981C7FA7EC0045DBE1 /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		010ED98F1C7FA6E30045DBE1 /* TestingCarthage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; };
 		010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
@@ -98,6 +111,9 @@
 					010ED98A1C7FA6E30045DBE1 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					010ED9971C7FA7EC0045DBE1 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = 010ED9861C7FA6E20045DBE1 /* Build configuration list for PBXProject "TestingCarthage" */;
@@ -113,6 +129,7 @@
 			projectRoot = "";
 			targets = (
 				010ED98A1C7FA6E30045DBE1 /* TestingCarthage */,
+				010ED9971C7FA7EC0045DBE1 /* Framework */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +244,20 @@
 			};
 			name = Release;
 		};
+		010ED9991C7FA7EC0045DBE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		010ED99A1C7FA7EC0045DBE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -244,6 +275,14 @@
 			buildConfigurations = (
 				010ED9951C7FA6E30045DBE1 /* Debug */,
 				010ED9961C7FA6E30045DBE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		010ED9981C7FA7EC0045DBE1 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010ED9991C7FA7EC0045DBE1 /* Debug */,
+				010ED99A1C7FA7EC0045DBE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
