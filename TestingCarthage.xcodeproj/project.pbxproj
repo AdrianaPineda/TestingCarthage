@@ -25,7 +25,7 @@
 		010ED98F1C7FA6E30045DBE1 /* TestingCarthage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; };
 		010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
 		010ED9CD1C7FCA500045DBE1 /* TestingCarthageFramework.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED9CC1C7FCA500045DBE1 /* TestingCarthageFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		010ED9D41C7FCA980045DBE1 /* Sum.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED9D21C7FCA980045DBE1 /* Sum.h */; };
+		010ED9D41C7FCA980045DBE1 /* Sum.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED9D21C7FCA980045DBE1 /* Sum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010ED9D51C7FCA980045DBE1 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9D31C7FCA980045DBE1 /* Sum.m */; };
 /* End PBXBuildFile section */
 
