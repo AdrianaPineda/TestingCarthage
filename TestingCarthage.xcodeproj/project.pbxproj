@@ -30,7 +30,6 @@
 		010ED9DA1C809F460045DBE1 /* TestingCarthage.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010ED9DC1C809F520045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
 		010ED9FE1C80EA240045DBE1 /* NonPublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9FD1C80EA240045DBE1 /* NonPublicClass.m */; };
-		010EDA011C80EBE40045DBE1 /* NonPublicClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED9FC1C80EA240045DBE1 /* NonPublicClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010EDA021C80EBEB0045DBE1 /* NonPublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9FD1C80EA240045DBE1 /* NonPublicClass.m */; };
 /* End PBXBuildFile section */
 
@@ -136,7 +135,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				010EDA011C80EBE40045DBE1 /* NonPublicClass.h in Headers */,
 				010ED9DA1C809F460045DBE1 /* TestingCarthage.h in Headers */,
 				010ED9D41C7FCA980045DBE1 /* Sum.h in Headers */,
 			);
