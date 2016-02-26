@@ -27,6 +27,8 @@
 		010ED9CD1C7FCA500045DBE1 /* TestingCarthageFramework.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010ED9CC1C7FCA500045DBE1 /* TestingCarthageFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010ED9D41C7FCA980045DBE1 /* Sum.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED9D21C7FCA980045DBE1 /* Sum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010ED9D51C7FCA980045DBE1 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9D31C7FCA980045DBE1 /* Sum.m */; };
+		010ED9DA1C809F460045DBE1 /* TestingCarthage.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		010ED9DC1C809F520045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010ED9DA1C809F460045DBE1 /* TestingCarthage.h in Headers */,
 				010ED9D41C7FCA980045DBE1 /* Sum.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010ED9D51C7FCA980045DBE1 /* Sum.m in Sources */,
+				010ED9DC1C809F520045DBE1 /* TestingCarthage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +469,7 @@
 				010ED9961C7FA6E30045DBE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		010ED9981C7FA7EC0045DBE1 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +478,7 @@
 				010ED99A1C7FA7EC0045DBE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		010ED9CF1C7FCA500045DBE1 /* Build configuration list for PBXNativeTarget "TestingCarthageFramework" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +487,7 @@
 				010ED9D11C7FCA500045DBE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
