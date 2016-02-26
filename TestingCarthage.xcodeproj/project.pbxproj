@@ -29,6 +29,7 @@
 		010ED9D51C7FCA980045DBE1 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9D31C7FCA980045DBE1 /* Sum.m */; };
 		010ED9DA1C809F460045DBE1 /* TestingCarthage.h in Headers */ = {isa = PBXBuildFile; fileRef = 010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010ED9DC1C809F520045DBE1 /* TestingCarthage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */; };
+		010ED9FE1C80EA240045DBE1 /* NonPublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ED9FD1C80EA240045DBE1 /* NonPublicClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		010ED9CE1C7FCA500045DBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010ED9D21C7FCA980045DBE1 /* Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sum.h; sourceTree = "<group>"; };
 		010ED9D31C7FCA980045DBE1 /* Sum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sum.m; sourceTree = "<group>"; };
+		010ED9FC1C80EA240045DBE1 /* NonPublicClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonPublicClass.h; sourceTree = "<group>"; };
+		010ED9FD1C80EA240045DBE1 /* NonPublicClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonPublicClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 			children = (
 				010ED98E1C7FA6E30045DBE1 /* TestingCarthage.h */,
 				010ED9901C7FA6E30045DBE1 /* TestingCarthage.m */,
+				010ED9FC1C80EA240045DBE1 /* NonPublicClass.h */,
+				010ED9FD1C80EA240045DBE1 /* NonPublicClass.m */,
 			);
 			path = TestingCarthage;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010ED9911C7FA6E30045DBE1 /* TestingCarthage.m in Sources */,
+				010ED9FE1C80EA240045DBE1 /* NonPublicClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,14 @@
 //
 
 #import "TestingCarthage.h"
+#import "NonPublicClass.h"
 
 @implementation TestingCarthage
 
 - (int)sumX:(int)x toY:(int)y {
-    return 3;
+    NonPublicClass *nonPublic = [[NonPublicClass alloc] init];
+    return [nonPublic justTesting];
+//    return 3;
 }
 
 @end
