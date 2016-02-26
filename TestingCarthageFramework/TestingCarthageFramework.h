@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char TestingCarthageFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TestingCarthageFramework/PublicHeader.h>
 
-#import <TestingCarthageFramework/Sum.h>
-#import <TestingCarthageFramework/TestingCarthage.h>
+//#import <TestingCarthageFramework/Sum.h>
+//#import <TestingCarthageFramework/TestingCarthage.h>
